@@ -1,0 +1,42 @@
+mzcategoryselection is a port of ezcategoryselection contribution for ezpublish 4.1+
+
+The ezcategoryselection documentation is at doc/README.pdf
+
+Known Issues:
+if you export/import packages of a class using this attribute, you should bind categories and options 
+again because the category attribute ID being referenced by mzcategoryselection options have changed
+
+Below a quick step by step to install and start using the datatype
+
+Installation
+
+1) Unzip the archive into the `extension' directory of your eZ publish installation.
+2) Enable the extension in eZ publish :
+   Edit site.ini.append.php in the folder root_of_ezpublish/settings/override
+   Under [ExtensionSettings] add the line: ActiveExtensions[]=mzcategoryselection
+   if you want to enable the extension by siteaccess :
+   		Edit site.ini.append.php in the folder root_of_ezpublish/settings/siteaccess/yoursiteaccess/site.ini.append.php 
+   		Under [ExtensionSettings] add the line: ActiveAccessExtensions[]=mzcategoryselection
+3) Clean up cache
+4) Regenerate ezpublish autoloads  
+
+Step by Step to create a sample class :
+
+1) Create a class, named Citizen  ( identifier: citizen )
+2) Add e Text Line attribute, named Full Name ( identifier: full_name ) 
+2) Add a Selection attribute, named Country ( identifier: country )
+3) Add some options to Country: i.e: [1] Norway, [2] Mozambique 
+4) Add a Category Selection attribute, named City ( identifier: city )
+5) Save the class
+6) Edit the class again
+7) The Country attribute should appear in the 'Categories'/'Attribute' list box of City attribute
+   Click on 'Categories'/'Refresh Category' button to list the Country options 
+8) Add some options to the City attribute: [1] Oslo, [2] Skien, [3] Maputo, [4] Beira
+9) After adding the first option the 'Bind Category' button will be enabled
+   To bind options to the categories, select the options that you want to bind on the option list, 
+   then select the category and click on the 'Bind Category' button
+   i.e: Select options 'Oslo' and 'Skien', then select Category 'Norway' and click on 'Bind Category'
+        Select options 'Maputo' and 'Beira', then select Category 'Mozambique' and click on 'Bind Category' 
+   You will see that selected options are grouped under selected category
+10) Create a contentobject of this class and enjoyed
+   

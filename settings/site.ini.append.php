@@ -1,0 +1,8 @@
+<?php
+/*
+
+[TemplateSettings]
+ExtensionAutoloadPath[]=mzcategoryselection
+
+*/
+?>
